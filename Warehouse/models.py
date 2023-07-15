@@ -7,9 +7,15 @@ class Juice(models.Model):
 	nic = models.IntegerField() # TODO: Small int field
 	capacity = models.IntegerField() # TODO: Small int field
 	salt = models.BooleanField(default=False)
-	brand = models.CharField(max_length=50) # TODO: Brand Class Model
+	brand = models.ForeignKey('Brand', on_delete=models.CASCADE)
 	price = models.IntegerField() 
 
-	# comment, Rate and Brand class model
+	# comment, Rate, Star, and Brand class model
 
+
+class Brand(models.Model):
+	name = models.CharField(max_length=50)
+	country = models.CharField(max_length=50)
+
+	#  Star, rate, comment
 
