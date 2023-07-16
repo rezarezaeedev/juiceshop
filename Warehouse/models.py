@@ -12,10 +12,15 @@ class Juice(models.Model):
 
 	# comment, Rate, Star, and Brand class model
 
+	def __str__(self):
+		return f'<Juice Object>: {self.flavour} {self.capacity}mm'
+
 
 class Brand(models.Model):
 	name = models.CharField(max_length=50)
 	country = models.CharField(max_length=50)
 
 	#  Star, rate, comment
+	def __str__(self):
+		return f'<Brand Object>: {self.name}'
 
