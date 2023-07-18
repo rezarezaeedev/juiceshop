@@ -40,9 +40,11 @@ INSTALLED_APPS = [
 
     # Installed Apps
     'rest_framework',
+    'rest_framework.authtoken',
 
     # My Apps
     'Warehouse',
+    'Authentications',
 ]
 
 MIDDLEWARE = [
