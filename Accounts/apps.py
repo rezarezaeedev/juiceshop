@@ -1,9 +1,9 @@
 from django.apps import AppConfig
 
 
-class AuthenticationsConfig(AppConfig):
+class AccountsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Authentications'
+    name = 'Accounts'
 
     
     def ready(self):

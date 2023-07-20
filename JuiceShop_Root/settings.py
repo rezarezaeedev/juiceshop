@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
     # My Apps
     'Warehouse',
-    'Authentications',
+    'Accounts',
 ]
 
 MIDDLEWARE = [
