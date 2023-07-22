@@ -5,6 +5,7 @@ User = get_user_model()
 
 
 class RegisterationSerializer(serializers.ModelSerializer):
+	'''Related Default DRF token authentication - Can be deleted'''
 	password2 = serializers.CharField(write_only=1)
 
 

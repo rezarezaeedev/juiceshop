@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import JuiceView, BrandView
 
@@ -7,5 +7,6 @@ router = DefaultRouter()
 router.register('juice', JuiceView)
 router.register('brand', BrandView)
 
-
-urlpatterns = router.urls
+urlpatterns = [
+	path('', include(router.urls)),
+]

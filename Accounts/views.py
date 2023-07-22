@@ -6,11 +6,11 @@ from rest_framework import status
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-
 @api_view(['POST',])
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def logout_view(request):
+	'''Related Default DRF token authentication - Can be deleted'''
 	if request.user.is_authenticated:
 		request.user.auth_token.delete()
 		return Response(status=status.HTTP_200_OK)
@@ -19,6 +19,7 @@ def logout_view(request):
 
 @api_view(['POST',])
 def registeration_view(request):
+	'''Related Default DRF token authentication - Can be deleted'''
 	data = {}
 	serializer = RegisterationSerializer(data = request.data)
 	if serializer.is_valid():
@@ -29,3 +30,6 @@ def registeration_view(request):
 		data = serializer.errors
 
 	return Response(data)
+
+
+
