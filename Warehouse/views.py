@@ -12,11 +12,10 @@ class JuiceView(ModelViewSet):
 	queryset = Juice.objects.all()
 	serializer_class = JuiceSerializer
 	permission_classes = [IsSuperUser]
-	# authentication_classes=[]
 
 
 class BrandView(ModelViewSet):
 	queryset = Brand.objects.all()
 	serializer_class = BrandSerializer
 	permission_classes = [IsSuperUser]
-	# authentication_classes=[JWTAuthentication]
+	authentication_classes=[JWTAuthentication]
