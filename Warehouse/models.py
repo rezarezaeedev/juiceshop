@@ -15,6 +15,9 @@ class Juice(models.Model):
 	def __str__(self):
 		return f'<Juice Object>: {self.flavour} {self.capacity}mm'
 
+	def get_brand_string(self):
+		return f'{self.brand.name} {self.brand.country}'
+
 
 class Brand(models.Model):
 	name = models.CharField(max_length=50)
