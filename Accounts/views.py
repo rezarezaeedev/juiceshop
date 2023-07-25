@@ -2,6 +2,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import RegisterationSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import status
+
 
 
 @api_view(['POST',])
@@ -15,7 +17,4 @@ def registeration_view(request):
 	else:
 		data = serializer.errors
 
-	return Response(data)
-
-
-
+	return Response(data, status=status.HTTP_201_CREATED)

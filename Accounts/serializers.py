@@ -29,7 +29,6 @@ class RegisterationSerializer(serializers.ModelSerializer):
 			error_flag = True
 			errors.update({'password':'Two password should be same!'})
 
-		print(errors)
 		if error_flag:
 			raise serializers.ValidationError(errors)
 		else:
